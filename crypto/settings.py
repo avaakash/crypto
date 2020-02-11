@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '42b+++qpy@3m08$-xgzye%jp56vmeyh=ds8-i29(^tl!m60#yv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.rrod.in','rrod.in']
 
 
 # Application definition
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'crypto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'crypto_db',
+        'USER': 'crypto_user',
+        'PASSWORD': 'rajbabu007',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
