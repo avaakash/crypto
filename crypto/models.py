@@ -12,6 +12,3 @@ class Words(models.Model):
     
     def __str__(self):
         return str(self.key)
-    
-    def __name__(self):
-        self.word
