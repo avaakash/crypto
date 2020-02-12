@@ -14,4 +14,4 @@ def random_word_display():
     else:
         qs.is_active = False
         qs.save()
-        return 
+        return qs
