@@ -25,7 +25,7 @@ SECRET_KEY = '42b+++qpy@3m08$-xgzye%jp56vmeyh=ds8-i29(^tl!m60#yv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.rrod.in','rrod.in']
+ALLOWED_HOSTS = ['www.rrod.in','rrod.in','localhost']
 
 
 # Application definition
