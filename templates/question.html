@@ -1,13 +1,51 @@
-
+{% load static %}
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>This is the question</title>
-    </head>
-    <body>
-        <h1>This is the question</h1>
-        <p> Question ID : {{ word.key }} </p>
-            <p>Unscrambble this word with the hint given</p>
-           <p> {{ word.word }} : {{ word.hint }}</p>
-    </body>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Find the word</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'retro.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Shrikhand" rel="stylesheet">
+  </head>
+  <body>
+<div class="jumbotron bg-secondary text-center text-danger mb-0 radius-0">
+  <div class="container">
+    <div class="ht-tm-header">
+      <h1 class="display-1 display-xxl text-uppercase">Sausage Passage</h1><br><br><br>
+      <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Well done!</h4>
+        You successfully found the password.
+        <a href="#!" id="alert-links" class="alert-link">Now you need to decode!</a>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar"
+          aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+      </div>
+      <div style="padding-top: 1rem;">
+        <span class="badge badge-pill badge-danger" style="font-size: 1.5rem;">Key : {{ word.key }}</span><br><br>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-danger" style="font-size: 1.5rem;">{{ word.word }}</li>
+      </ul>
+      <div class="card mb-3 text-center bg-danger text-white" style="font-size: 1.5rem;">
+        <div class="card-body">
+          <blockquote class="card-blockquote">
+            <p>{{ word.hint }}</p>
+          </blockquote>
+        </div>
+      </div>     
+    </div>
+  </div>
+</div>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'jquery.js' %}"></script>
+    <script>
+        $('#alert-links').on('click',function(e){
+            alert("Kuch nahi hoga isse, niche dekho iske!")
+        })
+    </script>
+  </body>
 </html>
