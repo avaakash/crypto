@@ -4,6 +4,8 @@ from .utils import random_word_display
 from .models import Words
 
 def home(request):
+    if 'word_key' in request.session:
+        return redirect('question')
     return render(request,'home.html')
 
 def authenticate(request):

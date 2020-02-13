@@ -5,12 +5,10 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="{% static 'favicon.ico' %}">
   <title>Yeh hai aam zindagi</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'neon.css' %}">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
 </head>
 <body>
   <div class="jumbotron bg-transparent mb-0 radius-0">
@@ -29,15 +27,15 @@
             <input class="form-control form-control-lg" type="password" value="" id="example-password-input"
             placeholder="The Comments Will Open This" name="password">
             <div class="text-mono"> 
-              <button type="submit" class="btn btn-success btn-shadow px-3 my-2 ml-0 text-left">
+              <button type="button" id="wrongButton" class="btn btn-success btn-shadow px-3 my-2 ml-0 text-left">
                 abracadabra
               </button>
-              <button type="button" class="btn btn-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left">
+              <button type="submit" class="btn btn-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left">
                 khul ja sim sim
               </button>
             </div>
         </form>
-          ><br><br><br>
+          <br><br><br>
           <div class="text-darkgrey text-mono my-2 text-center">Sorry peeps I can't help you</div>
           <span class="hal-9000 d-block mx-auto mb-4 mt-3"></span>
         </div>
@@ -60,9 +58,15 @@
             },
             error: function (json) {
                 console.log('Error');
+                alert("Entry Denied!\n The password is incorrect.")
             },
         });
     });
+</script>
+<script>
+    $('#wrongButton').on('click',function(e){
+        alert("Mein hu ki nahi?")
+    })
 </script>
 </body>
 </html>
